@@ -658,7 +658,7 @@ function OrionLib:MakeWindow(WindowConfig)
 		WindowConfig.CloseCallback()
 		local ScreenGui1 = Instance.new("ScreenGui")
 local ImageButton1 = Instance.new("ImageButton")
-local OrionLib = Instance.new("UICorner")
+local UICorner = Instance.new("UICorner")
 
 ScreenGui1.Name = "ImageButton"
 ScreenGui1.Parent = game.CoreGui
