@@ -1,3 +1,22 @@
+ource
+BreadcrumbsSource
+/Source
+Latest commit
+lorenxzx
+lorenxzx
+Update Source
+c308a81
+ · 
+4 days ago
+History
+BreadcrumbsSource
+/Source
+File metadata and controls
+
+Code
+
+Blame
+1722 lines (1532 loc) · 61.3 KB
 
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
@@ -505,7 +524,13 @@ function OrionLib:MakeWindow(WindowConfig)
 		Size = UDim2.new(0.5, 0, 1, 0),
 		Position = UDim2.new(0.5, 0, 0, 0),
 		BackgroundTransparency = 1
-	}), {
+	      CloseBtn.MouseButton1Down:connect(function()
+            local ImageButton1 = Instance.new("ImageButton")
+            ImageButton1.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+            ImageButton1.Size = UDim2.new(0, 50, 0, 50)
+            ImageButton1.Draggable = false
+    end)
+    }), {
 		AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://7072725342"), {
 			Position = UDim2.new(0, 9, 0, 6),
 			Size = UDim2.new(0, 18, 0, 18)
@@ -656,26 +681,6 @@ function OrionLib:MakeWindow(WindowConfig)
 			Time = 5
 		})
 		WindowConfig.CloseCallback()
-		local ScreenGui1 = Instance.new("ScreenGui")
-local ImageButton1 = Instance.new("ImageButton")
-local UICorner = Instance.new("UICorner")
-
-ScreenGui1.Name = "ImageButton"
-ScreenGui1.Parent = game.CoreGui
-ScreenGui1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-ImageButton1.Parent = ScreenGui1
-ImageButton1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-ImageButton1.BorderSizePixel = 0
-ImageButton1.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-ImageButton1.Size = UDim2.new(0, 50, 0, 50)
-ImageButton1.Draggable = true
-ImageButton1.Image = "rbxassetid://18231011585"
-ImageButton1.MouseButton1Down:connect(function()
-  game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,false,game)
-  game:GetService("VirtualInputManager"):SendKeyEvent(false,Enum.KeyCode.End,false,game)
-end)
-UICorner.Parent = ImageButton1
 	end)
 
 	AddConnection(UserInputService.InputBegan, function(Input)
