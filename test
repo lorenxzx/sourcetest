@@ -675,9 +675,6 @@ ImageButton.BorderSizePixel = 0
 ImageButton.Size = UDim2.new(0, 100, 0, 100)
 ImageButton.Image = "rbxasset://130774789202390"
 
-Icon.MouseButton1Down:Connect(function()
-
-end)
 		
 		OrionLib:MakeNotification({
 			Name = "Hub Fechado",
