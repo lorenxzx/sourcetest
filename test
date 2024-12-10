@@ -676,7 +676,7 @@ ImageButton.Size = UDim2.new(0, 100, 0, 100)
 ImageButton.Image = "rbxasset://130774789202390"
 
 Icon.MouseButton1Down:Connect(function()
-	local Window = OrionLib:MakeWindow({Name = "Zetto Hub", HidePremium = false, SaveConfig = false, ConfigFolder = "Zetto", IntroEnabled = true, IntroText = "Zetto Hub", IntroIcon = "rbxassetid://130774789202390"})
+
 end)
 		
 		OrionLib:MakeNotification({
