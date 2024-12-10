@@ -1,22 +1,3 @@
-ource
-BreadcrumbsSource
-/Source
-Latest commit
-lorenxzx
-lorenxzx
-Update Source
-c308a81
- · 
-4 days ago
-History
-BreadcrumbsSource
-/Source
-File metadata and controls
-
-Code
-
-Blame
-1722 lines (1532 loc) · 61.3 KB
 
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
@@ -524,13 +505,7 @@ function OrionLib:MakeWindow(WindowConfig)
 		Size = UDim2.new(0.5, 0, 1, 0),
 		Position = UDim2.new(0.5, 0, 0, 0),
 		BackgroundTransparency = 1
-	      CloseBtn.MouseButton1Down:connect(function()
-            local ImageButton1 = Instance.new("ImageButton")
-            ImageButton1.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-            ImageButton1.Size = UDim2.new(0, 50, 0, 50)
-            ImageButton1.Draggable = false
-    end)
-    }), {
+	}), {
 		AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://7072725342"), {
 			Position = UDim2.new(0, 9, 0, 6),
 			Size = UDim2.new(0, 18, 0, 18)
@@ -673,6 +648,36 @@ function OrionLib:MakeWindow(WindowConfig)
 	AddConnection(CloseBtn.MouseButton1Up, function()
 		MainWindow.Visible = false
 		UIHidden = true
+        
+-- Instances:
+
+local Icon = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local ImageButton = Instance.new("ImageButton")
+
+--Properties:
+
+Icon.Name = "Icon"
+Icon.Parent = game.StarterGui.ScreenGui
+Icon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Icon.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Icon.BorderSizePixel = 0
+Icon.Position = UDim2.new(0.247538999, 0, 0.157035172, 0)
+Icon.Size = UDim2.new(0, 37, 0, 36)
+
+UICorner.CornerRadius = UDim.new(1, 2)
+UICorner.Parent = Icon
+
+ImageButton.Parent = UICorner
+ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton.BorderSizePixel = 0
+ImageButton.Size = UDim2.new(0, 100, 0, 100)
+ImageButton.Image = "rbxasset://130774789202390"
+
+Icon.MouseButton1Down:Connect(function()
+	local Window = OrionLib:MakeWindow({Name = "Zetto Hub", HidePremium = false, SaveConfig = false, ConfigFolder = "Zetto", IntroEnabled = true, IntroText = "Zetto Hub", IntroIcon = "rbxassetid://130774789202390"})
+end)
 		
 		OrionLib:MakeNotification({
 			Name = "Hub Fechado",
